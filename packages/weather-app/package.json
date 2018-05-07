@@ -1,0 +1,11 @@
+{
+  "name": "weather-app",
+  "description": "Weather App",
+  "version": "1.0.0",
+  "author": "Naresh Bhatia",
+  "license": "MIT",
+  "main": "weather-app.js",
+  "dependencies": {
+    "temp-utils": "^1.0.0"
+  }
+}

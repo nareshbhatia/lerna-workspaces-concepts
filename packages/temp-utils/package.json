@@ -1,0 +1,11 @@
+{
+  "name": "temp-utils",
+  "description": "Temperature utilities",
+  "version": "1.0.0",
+  "author": "Naresh Bhatia",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "dependencies": {
+    "lodash": "^4.17.5"
+  }
+}
