@@ -16,20 +16,25 @@
     "test": "jest",
     "del-dist": "lerna exec --parallel -- del-cli dist",
     "prebuild": "yarn del-dist",
-    "build": "lerna exec -- babel src -d dist --ignore test.js",
+    "build": "lerna exec -- babel src -d dist --root-mode upward --ignore test.js",
     "start": "node packages/weather-app/dist/weather-app"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-jest": "^23.0.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-1": "^6.24.1",
-    "del-cli": "^1.1.0",
-    "jest": "^23.1.0",
-    "lerna": "^2.11.0"
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel-jest": "^26.1.0",
+    "del-cli": "^3.0.1",
+    "jest": "^26.1.0",
+    "lerna": "^3.22.1",
+    "prettier": "^2.0.5"
   },
   "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    },
+    "collectCoverage": true,
     "coverageThreshold": {
       "global": {
         "branches": 90,
@@ -38,6 +43,9 @@
         "statements": 95
       }
     },
-    "collectCoverage": true
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/dist/"
+    ]
   }
 }
